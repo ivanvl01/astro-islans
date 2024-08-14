@@ -1,0 +1,27 @@
+---
+// This is the script section of an Astro component
+const fetchPokemonData = async () => {
+  // Adding a delay of 5000 ms
+  await new Promise(resolve => setTimeout(resolve, 5000));
+
+  // Fetch the Pokémon data after the delay
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+  if (!response.ok) {
+    throw new Error('Failed to fetch Pokémon data');
+  }
+  const data = await response.json();
+  return data.results; // Assuming you want to work with the results
+};
+// Fetch the Pokémon data on the server
+const pokemonData = await fetchPokemonData();
+---
+
+<!-- This is the HTML section of an Astro component -->
+<div>
+  <h1>Pokémon List</h1>
+  <ul>
+    {pokemonData.map((pokemon) => (
+      <li>{pokemon.name}</li>
+    ))}
+  </ul>
+</div>
