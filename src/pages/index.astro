@@ -1,0 +1,33 @@
+---
+import ServerIsland from '@components/ServerIsland.tsx'
+import StaticComponent from '@components/StaticComponent.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+        <div class="flex flex-col gap-2 p-10">
+		<h1>Astro</h1>
+        <StaticComponent>
+            <Fragment slot="header"> <!-- pass table header -->
+                <tr><th>Product name</th><th>Stock units</th></tr>
+              </Fragment>
+            
+              <Fragment slot="body"> <!-- pass table body -->
+                <tr><td>Flip-flops</td><td>64</td></tr>
+                <tr><td>Boots</td><td>32</td></tr>
+                <tr><td>Sneakers</td><td class="text-red-500">0</td></tr>
+              </Fragment>
+        </StaticComponent>
+        <ServerIsland server:defer >
+            <div slot="fallback" >LOADING...</div>
+        </ServerIsland>
+    </div>
+	</body>
+</html>
