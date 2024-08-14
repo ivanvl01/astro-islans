@@ -1,6 +1,10 @@
 ---
-import ServerIsland from '@components/ServerIsland.astro'
-import StaticComponent from '@components/StaticComponent.astro';
+import PokemonIsland from '@components/PokemonIsland.astro'
+import Header from '@components/Header.astro';
+import BannerOne from '@components/BannerOne.astro';
+import Footer from '@components/Footer.astro';
+import BannerTwo from '@components/BannerTwo.astro';
+import BannerThree from '@components/BannerThree.astro';
 ---
 
 <html lang="en">
@@ -9,25 +13,17 @@ import StaticComponent from '@components/StaticComponent.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Pokemons</title>
 	</head>
-	<body>
-        <div class="flex flex-col gap-2 p-10">
-		<h1>Astro</h1>
-        <StaticComponent>
-            <Fragment slot="header"> <!-- pass table header -->
-                <tr><th>Product name</th><th>Stock units</th></tr>
-              </Fragment>
-            
-              <Fragment slot="body"> <!-- pass table body -->
-                <tr><td>Flip-flops</td><td>64</td></tr>
-                <tr><td>Boots</td><td>32</td></tr>
-                <tr><td>Sneakers</td><td class="text-red-500">0</td></tr>
-              </Fragment>
-        </StaticComponent>
-        <ServerIsland server:defer >
-            <div slot="fallback" >LOADING...</div>
-        </ServerIsland>
+	<body >
+        <Header/>
+        <BannerOne/>
+        <BannerTwo/>
+        <BannerThree/>
+        <PokemonIsland server:defer >
+            <div slot="fallback" class="h-[1084px] w-full flex items-center justify-center">LOADING...</div>
+        </PokemonIsland>
+        <Footer/>
     </div>
 	</body>
 </html>

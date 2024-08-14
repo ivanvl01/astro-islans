@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import charizardImage from '../assets/charizard.png';
+import underlineVector from '../assets/vector_underline.png'
+import PrimaryButton from "./PrimaryButton.astro";
+---
+
+<div class="flex justify-center items-center relative py-28">
+    <div class="w-[555px] flex flex-col gap-7 z-10 mr-[35%]">
+        <h1 class="text-[80px] leading-[90px] font-bold">We’re here to Increase your Productivity</h1>
+        <Image src={underlineVector} alt="underline-vector" loading='eager' />
+        <p class="w-[461px]">Let's make your work more organize and easily using the Taskio Dashboard with many of the latest featuresin managing work every day.</p>
+        <PrimaryButton text="Try free trial"/>
+    </div>
+
+    <Image src={charizardImage} alt="charizard" class="absolute right-0" loading='eager'/>
+</div>

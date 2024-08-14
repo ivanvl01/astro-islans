@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import Publish from '../assets/publish.png'
+import Analytics from '../assets/analytics.png'
+import Eng from '../assets/eng.png'
+---
+
+<section class="bg-[#F9F8FE] flex py-[70px] gap-[30px] w-full justify-center mt-40 px-[130px]">
+    <div class="flex flex-col max-w-[617px]">
+      <h2 class="text-[40px] font-bold">
+        How we support our pratner all over the world
+      </h2>
+      <p class="text-[#A6A6A6] font-medium">
+        SaaS become a common delivery model for many business application,
+        including office software, messaging software, payroll processing
+        software, DBMS software, management software
+      </p>
+      <button class="bg-[#54BD95] rounded-full  h-[62px] text-white px-4 py-2">
+        Try free trial
+      </button>
+    </div>
+    <div class="flex flex-col gap-[30px]">
+      <div class="flex justify-start gap-5">
+        <div class="w-[60px] h-[60px] bg-[#FFFFFF] flex justify-center items-center rounded-md drop-shadow-sm">
+          <Image
+            src={Publish}
+            height={30}
+            width={30}
+            alt={"img1"}
+          />
+        </div>
+        <div class="flex flex-col justify-start align-top gap-[10px]">
+          <h3 class="text-[28px] font-bold">Publishing</h3>
+          <p class="text-[#A6A6A6] font-medium max-w-[428px] ">
+            Plan, collaborate, and publishing your contetn that drivees
+            meaningful engagement and growth for your barnd
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-start gap-5">
+        <div class="w-[60px] h-[60px] bg-[#FFFFFF] flex justify-center items-center rounded-md drop-shadow-sm">
+          <Image
+            src={Analytics}
+            height={30}
+            width={30}
+            alt={"img1"}
+          />
+        </div>
+        <div class="flex flex-col justify-start align-top gap-[10px]">
+          <h3 class="text-[28px] font-bold">Analytics</h3>
+          <p class="text-[#A6A6A6] font-medium  max-w-[428px]">
+            Analyze your performance and create goegeous report
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-start gap-5">
+        <div class="w-[60px] h-[60px] bg-[#FFFFFF] flex justify-center items-center rounded-md drop-shadow-sm">
+          <Image src={Eng} height={30} width={30} alt={"img1"} />
+        </div>
+        <div class="flex flex-col justify-start align-top gap-[10px]">
+          <h3 class="text-[28px] font-bold">Engagement</h3>
+          <p class="text-[#A6A6A6] font-medium  max-w-[428px]">
+            Quiuckly navigate you anda engage with your adience
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
